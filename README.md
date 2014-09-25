@@ -1,0 +1,4 @@
+dockerkurwa
+===========
+
+Useful docker aliases

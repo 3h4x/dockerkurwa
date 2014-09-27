@@ -1,5 +1,5 @@
 # remove all containers
-alias docker-rmall=doker rm $(docker ps -qa) && docker rmi $(docker images -q)
+alias docker-rmall='docker rm $(docker ps -qa) && docker rmi $(docker images -q)'
 # kill all containers
 alias docker-killall='docker kill $(docker ps -q)'
 # get ip of container

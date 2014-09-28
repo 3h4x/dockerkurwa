@@ -6,3 +6,5 @@ alias docker-killall='docker kill $(docker ps -q)'
 alias docker-ip='docker inspect -f "{{ .NetworkSettings.IPAddress }}"'
 # enter last container
 alias docker-ns='nsenter --target $(docker inspect --format {{.State.Pid}} $(sudo docker ps -q | head -n1)) --mount --uts --ipc --net --pid'
+# docker run -it
+alias docker-runit='docker run -it '

@@ -7,6 +7,8 @@ alias docker-id='export DOCKER_ID=`docker ps -ql` && echo $DOCKER_ID'
 alias docker-rmall='docker stop $(docker ps -qa) && docker rm $(docker ps -qa) && docker rmi $(docker images -q)'
 # kill all containers
 alias docker-killall='docker kill $(docker ps -q)'
+# inspect last container created
+alias docker-inspect="docker inspect $(docker ps -ql) | less"
 # get ip of container
 alias docker-ip='docker inspect -f "{{ .NetworkSettings.IPAddress }}"'
 # enter last container

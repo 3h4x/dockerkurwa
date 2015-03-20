@@ -15,3 +15,5 @@ alias docker-ip='docker inspect -f "{{ .NetworkSettings.IPAddress }}"'
 alias docker-ns='nsenter --target $(docker inspect --format {{.State.Pid}} $(docker ps -ql)) --mount --uts --ipc --net --pid'
 # docker run -it
 alias docker-run='docker run -it '
+# docker exec last container
+alias docker-exec='docker exec -it $(docker ps -ql)' #command to use

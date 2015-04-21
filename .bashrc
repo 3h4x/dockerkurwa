@@ -17,3 +17,5 @@ alias docker-ns='nsenter --target $(docker inspect --format {{.State.Pid}} $(doc
 alias docker-run='docker run -it '
 # docker exec last container
 alias docker-exec='docker exec -it $(docker ps -ql)' #command to use
+# docker clean images
+alias docker-clean='docker rmi $(docker images --filter dangling=true --quiet)'

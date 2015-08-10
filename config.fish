@@ -38,6 +38,6 @@ function docker-exec
 end
 
 function docker-clean
-	docker rmi (docker images --filter dangling=true --quiet
+	docker rmi (docker images --filter dangling=true --quiet)
 	docker rm (docker ps -a | grep Exited | cut -d" " -f1)
 end

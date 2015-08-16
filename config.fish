@@ -41,3 +41,8 @@ function docker-clean
 	docker rmi (docker images --filter dangling=true --quiet)
 	docker rm (docker ps -a | grep Exited | cut -d" " -f1)
 end
+
+function docker-rmuntagged
+	docker rmi (docker images -a | grep "^<none>" | awk '{print $3}')
+end
+

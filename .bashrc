@@ -20,4 +20,4 @@ alias docker-exec='docker exec -it $(docker ps -ql)' #command to use
 # docker clean images
 alias docker-clean='docker rmi $(docker images --filter dangling=true --quiet); docker rm $(docker ps -a | grep Exited | cut -d" " -f1)'
 # docker remove untagged images
-alias docker-rmuntagged='docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}')'
+alias docker-rmuntagged='docker rmi $(docker images -a | grep "^<none>" | awk "{print \$3}")'

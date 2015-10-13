@@ -38,8 +38,8 @@ function docker-exec
 end
 
 function docker-clean
-	docker rmi (docker images --filter dangling=true --quiet)
-	docker rm (docker ps -a | grep Exited | cut -d" " -f1)
+	docker rm -v (docker ps -a -q -f status=exited)
+	docker rmi (docker images -f "dangling=true" -q)
 end
 
 function docker-rmuntagged

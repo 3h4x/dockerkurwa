@@ -42,6 +42,11 @@ function docker-clean
 	docker rmi (docker images -f "dangling=true" -q)
 end
 
+# [docker 1.9+] docker clean dangling volumes
+function docker-clean-volumes 
+	docker volume rm $(docker volume ls -qf dangling=true)
+end
+
 function docker-rmuntagged
 	docker rmi (docker images -a | grep "^<none>" | awk '{print $3}')
 end

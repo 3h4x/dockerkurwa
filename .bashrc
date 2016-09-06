@@ -19,5 +19,7 @@ alias docker-run='docker run -it '
 alias docker-exec='docker exec -it $(docker ps -ql)' #command to use
 # docker clean images
 alias docker-clean='docker rmi $(docker images -f "dangling=true" -q); docker rm -v $(docker ps -a -q -f status=exited)'
+# [docker 1.9+] docker clean dangling volumes 
+alias docker-clean-volumes='docker volume rm $(docker volume ls -qf dangling=true)'
 # docker remove untagged images
 alias docker-rmuntagged='docker rmi $(docker images -a | grep "^<none>" | awk "{print \$3}")'
